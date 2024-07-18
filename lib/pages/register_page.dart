@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_firebase/components/my_button.dart';
 import 'package:flutter_firebase/components/my_textField.dart';
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   final void Function()? onTap;
 
-  LoginPage({super.key, required this.onTap});
+  RegisterPage({super.key, required this.onTap});
 
+  final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPwController = TextEditingController();
 
-  void login (){
-
-  }
+  void register() {}
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +35,13 @@ class LoginPage extends StatelessWidget {
                 style: TextStyle(fontSize: 25),
               ),
               const SizedBox(height: 55),
+              //username
+              MyTextfield(
+                txtHint: "Username",
+                txtObsure: false,
+                controller: usernameController,
+              ),
+              const SizedBox(height: 15),
               //email
               MyTextfield(
                 txtHint: "Email",
@@ -51,38 +56,48 @@ class LoginPage extends StatelessWidget {
                 controller: passwordController,
               ),
               const SizedBox(height: 10),
+              //confirm password
+              MyTextfield(
+                txtHint: "Confirm password",
+                txtObsure: true,
+                controller: confirmPwController,
+              ),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
                     "Forgot Password?",
                     style: TextStyle(
-                    fontSize: 15,
-                    color: Theme.of(context).colorScheme.inversePrimary),
-                    )
+                        fontSize: 15,
+                        color: Theme.of(context).colorScheme.inversePrimary),
+                  )
                 ],
               ),
-              const SizedBox(height: 25,),
-              MyButton(
-                text: "Login",
-                onTap: login,
+              const SizedBox(
+                height: 25,
               ),
-              const SizedBox(height: 25,),
+              MyButton(
+                text: "Register",
+                onTap: register,
+              ),
+              const SizedBox(
+                height: 25,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Don't have any account?",style: TextStyle(
-                    color: Theme.of(context).colorScheme.inversePrimary),
+                  Text(
+                    "Already have an account?",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary),
                   ),
                   GestureDetector(
-                    onTap: onTap,
-                  child: const Text(
-                       " Register here",
-                       style: TextStyle(
-                       fontWeight: FontWeight.bold,
-                      )
-                    )
-                  ),
+                      onTap: onTap,
+                      child: const Text(" Login here",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ))),
                 ],
               )
             ],

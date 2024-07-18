@@ -22,7 +22,7 @@ class MyTextfield extends StatelessWidget {
         ),
         hintText: txtHint,
       ),
-      obscureText: true,
+      obscureText: txtObsure,
     );
   }
 }
