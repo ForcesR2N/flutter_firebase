@@ -36,7 +36,7 @@ class LoginPage extends StatelessWidget {
                 "R i z z A p p",
                 style: TextStyle(fontSize: 25),
               ),
-              const SizedBox(height: 55),
+              const SizedBox(height: 50),
               //email
               MyTextfield(
                 txtHint: "Email",
