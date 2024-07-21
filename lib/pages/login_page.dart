@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
                 size: 80,
                 color: Theme.of(context).colorScheme.inversePrimary,
               ),
-              const SizedBox(height: 7),
+              const SizedBox(height: 8),
               Text(
                 "R i z z A p p",
                 style: TextStyle(fontSize: 25),
@@ -41,7 +41,7 @@ class LoginPage extends StatelessWidget {
                 txtObsure: false,
                 controller: emailController,
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 17),
               //password
               MyTextfield(
                 txtHint: "Password",
