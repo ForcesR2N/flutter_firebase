@@ -67,7 +67,7 @@ class RegisterPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    "Forgot Password?",
+                    "Forgot Your Password?",
                     style: TextStyle(
                         fontSize: 15,
                         color: Theme.of(context).colorScheme.inversePrimary),
