@@ -30,7 +30,7 @@ class RegisterPage extends StatelessWidget {
                 color: Theme.of(context).colorScheme.inversePrimary,
               ),
               const SizedBox(height: 8),
-              Text(
+              const Text(
                 "R i z z A p p",
                 style: TextStyle(fontSize: 25),
               ),

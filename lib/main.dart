@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase/auth/login_or_register.dart';
-import 'package:flutter_firebase/pages/register_page.dart';
 import 'package:flutter_firebase/theme/dark_mode.dart';
 import 'package:flutter_firebase/theme/light_mode.dart';
 

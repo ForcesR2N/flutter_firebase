@@ -10,9 +10,7 @@ class LoginPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  void login (){
-
-  }
+  void login() {}
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +28,7 @@ class LoginPage extends StatelessWidget {
                 color: Theme.of(context).colorScheme.inversePrimary,
               ),
               const SizedBox(height: 8),
-              Text(
+              const Text(
                 "R i z z A p p",
                 style: TextStyle(fontSize: 25),
               ),
@@ -55,32 +53,35 @@ class LoginPage extends StatelessWidget {
                   Text(
                     "Forgot Password?",
                     style: TextStyle(
-                    fontSize: 15,
-                    color: Theme.of(context).colorScheme.inversePrimary),
-                    )
+                        fontSize: 15,
+                        color: Theme.of(context).colorScheme.inversePrimary),
+                  )
                 ],
               ),
-              const SizedBox(height: 25,),
+              const SizedBox(
+                height: 25,
+              ),
               MyButton(
                 text: "Login",
                 onTap: login,
               ),
-              const SizedBox(height: 25,),
+              const SizedBox(
+                height: 25,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Don't have any account?",style: TextStyle(
-                    color: Theme.of(context).colorScheme.inversePrimary),
+                  Text(
+                    "Don't have any account?",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary),
                   ),
                   GestureDetector(
-                    onTap: onTap,
-                  child: const Text(
-                       " Register here",
-                       style: TextStyle(
-                       fontWeight: FontWeight.bold,
-                      )
-                    )
-                  ),
+                      onTap: onTap,
+                      child: const Text(" Register here",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ))),
                 ],
               )
             ],
