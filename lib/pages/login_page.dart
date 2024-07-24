@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase/components/my_button.dart';
 import 'package:flutter_firebase/components/my_textField.dart';
+import 'package:flutter_firebase/pages/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   final void Function()? onTap;
@@ -9,13 +10,13 @@ class LoginPage extends StatelessWidget {
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
-  void login() {}
+  String email = "rizal";
+  String pw = "27";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(25.0),
@@ -37,6 +38,7 @@ class LoginPage extends StatelessWidget {
               MyTextfield(
                 txtHint: "Email",
                 txtObsure: false,
+                
                 controller: emailController,
               ),
               const SizedBox(height: 17),
@@ -63,7 +65,15 @@ class LoginPage extends StatelessWidget {
               ),
               MyButton(
                 text: "Login",
-                onTap: login,
+                onTap: () {
+                  if(email == emailController && pw == passwordController){
+                    Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => const myHome())
+                    );
+                  }else{
+                    
+                  }
+                },
               ),
               const SizedBox(
                 height: 25,
