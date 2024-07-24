@@ -65,11 +65,11 @@ class LoginPage extends StatelessWidget {
               MyButton(
                 text: "Login",
                 onTap: () {
-                  if (email == emailController && pw == passwordController) {
+                  if (email == emailController.text && pw == int.tryParse(passwordController.text)) {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const myHome()));
+                            builder: (context) => const MyHome()));
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("login failed"),
