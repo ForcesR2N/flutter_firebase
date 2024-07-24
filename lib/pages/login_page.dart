@@ -10,8 +10,8 @@ class LoginPage extends StatelessWidget {
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  String email = "rizal";
-  String pw = "27";
+  final String email = "rizal";
+  final int pw = 27;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,6 @@ class LoginPage extends StatelessWidget {
               MyTextfield(
                 txtHint: "Email",
                 txtObsure: false,
-                
                 controller: emailController,
               ),
               const SizedBox(height: 17),
@@ -66,12 +65,15 @@ class LoginPage extends StatelessWidget {
               MyButton(
                 text: "Login",
                 onTap: () {
-                  if(email == emailController && pw == passwordController){
+                  if (email == emailController && pw == passwordController) {
                     Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => const myHome())
-                    );
-                  }else{
-                    
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const myHome()));
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text("login failed"),
+                    ));
                   }
                 },
               ),
