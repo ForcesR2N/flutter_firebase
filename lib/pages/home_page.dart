@@ -9,37 +9,66 @@ class MyHome extends StatefulWidget {
 
 class _MyHomePage extends State<MyHome> {
   int _selectedIndex = 0;
+  final PageController _pageController = PageController();
 
-  void _navigateBottonBar(int index) {
+  void _navigateBottomBar(int index) {
     setState(() {
       _selectedIndex = index;
     });
+    _pageController.animateToPage(index,
+        duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text(
-          'welcome',
-          style: TextStyle(fontSize: 50),
-        ),
+      body: PageView(
+        controller: _pageController,
+        onPageChanged: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+        children: const [
+          Center(
+            child: Text(
+              'Home',
+              style: TextStyle(fontSize: 50),
+            ),
+          ),
+          Center(
+            child: Text(
+              'Menu',
+              style: TextStyle(fontSize: 50),
+            ),
+          ),
+          Center(
+            child: Text(
+              'Profile',
+              style: TextStyle(fontSize: 50),
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          onTap: _navigateBottonBar,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-              icon: const Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(icon: Icon(Icons.menu),
-             label: 'Menu'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person_3_sharp),
-            label: 'Profile'),
-          ]),
+        currentIndex: _selectedIndex,
+        onTap: _navigateBottomBar,
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu),
+            label: 'Menu',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+      ),
     );
   }
 }
