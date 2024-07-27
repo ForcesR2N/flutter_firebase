@@ -15,9 +15,11 @@ class _MyHomePage extends State<MyHome> {
     setState(() {
       _selectedIndex = index;
     });
-    _pageController.animateToPage(index,
-        duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
   }
+
+  final List<Widget> _pages = [
+
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -29,26 +31,6 @@ class _MyHomePage extends State<MyHome> {
             _selectedIndex = index;
           });
         },
-        children: const [
-          Center(
-            child: Text(
-              'Home',
-              style: TextStyle(fontSize: 50),
-            ),
-          ),
-          Center(
-            child: Text(
-              'Menu',
-              style: TextStyle(fontSize: 50),
-            ),
-          ),
-          Center(
-            child: Text(
-              'Profile',
-              style: TextStyle(fontSize: 50),
-            ),
-          ),
-        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
@@ -60,8 +42,8 @@ class _MyHomePage extends State<MyHome> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.menu),
-            label: 'Menu',
+            icon: Icon(Icons.search),
+            label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
