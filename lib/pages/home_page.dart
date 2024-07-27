@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase/pages/profile_page.dart';
+import 'package:flutter_firebase/pages/search_page.dart';
+import 'package:flutter_firebase/pages/home_page.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({Key? key}) : super(key: key);
@@ -9,7 +12,6 @@ class MyHome extends StatefulWidget {
 
 class _MyHomePage extends State<MyHome> {
   int _selectedIndex = 0;
-  final PageController _pageController = PageController();
 
   void _navigateBottomBar(int index) {
     setState(() {
@@ -18,20 +20,15 @@ class _MyHomePage extends State<MyHome> {
   }
 
   final List<Widget> _pages = [
-
+    MyHome(),
+    SearchPage(),
+    ProfilePage()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-      ),
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _navigateBottomBar,
