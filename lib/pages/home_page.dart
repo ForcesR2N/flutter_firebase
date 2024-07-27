@@ -20,9 +20,9 @@ class _MyHomePage extends State<MyHome> {
   }
 
   final List<Widget> _pages = [
-    MyHome(),
+    Center(child: Text('Home Page')),  // This should be HomePage() instead of MyHome()
     SearchPage(),
-    ProfilePage()
+    ProfilePage(),
   ];
 
   @override
