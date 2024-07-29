@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase/pages/profile_page.dart';
 import 'package:flutter_firebase/pages/search_page.dart';
-import 'package:flutter_firebase/pages/home_page.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({Key? key}) : super(key: key);
