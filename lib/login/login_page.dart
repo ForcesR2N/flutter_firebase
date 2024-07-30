@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_firebase/components/my_button.dart';
 import 'package:flutter_firebase/components/my_textField.dart';
 import 'package:flutter_firebase/pages/home_page.dart';
+import 'package:flutter_firebase/components/navbar.dart';
 
 class LoginPage extends StatelessWidget {
   final void Function()? onTap;
@@ -65,11 +66,12 @@ class LoginPage extends StatelessWidget {
               MyButton(
                 text: "Login",
                 onTap: () {
-                  if (email == emailController.text && pw == int.tryParse(passwordController.text)) {
+                  if (email == emailController.text &&
+                      pw == int.tryParse(passwordController.text)) {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const MyHome()));
+                            builder: (context) => const Navbar()));
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("login failed"),
@@ -89,11 +91,14 @@ class LoginPage extends StatelessWidget {
                         color: Theme.of(context).colorScheme.inversePrimary),
                   ),
                   GestureDetector(
-                      onTap: onTap,
-                      child: const Text(" Register here",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ))),
+                    onTap: onTap,
+                    child: const Text(
+                      " Register here",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ],
               )
             ],
