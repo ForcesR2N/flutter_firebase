@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase/components/my_button.dart';
-import 'package:flutter_firebase/components/my_textField.dart';
+import 'package:flutter_firebase/components/text_field.dart';
 
 class RegisterPage extends StatelessWidget {
   final void Function()? onTap;

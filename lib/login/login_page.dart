@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase/components/my_button.dart';
-import 'package:flutter_firebase/components/my_textField.dart';
+import 'package:flutter_firebase/components/text_field.dart';
 import 'package:flutter_firebase/pages/home_page.dart';
 import 'package:flutter_firebase/components/navbar.dart';
 
