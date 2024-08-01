@@ -13,12 +13,12 @@ class MyHome extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            print('clicked');
+            const Text('clicked');
           },
-          child: const Text('home page'),
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.white,
           ),
+          child: const Text('home page'),
         ),
       ),
       backgroundColor: Colors.deepPurple,

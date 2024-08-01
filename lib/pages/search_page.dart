@@ -11,7 +11,7 @@ class SearchPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: EdgeInsets.all(10),
+                  margin: const EdgeInsets.all(10),
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: "username",
@@ -22,7 +22,7 @@ class SearchPage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.all(10),
+                  margin: const EdgeInsets.all(10),
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: "password",
@@ -34,7 +34,7 @@ class SearchPage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {},
-                  child: Text("Login"),
+                  child: const Text("Login"),
                 ),
               ],
             ),
@@ -46,7 +46,7 @@ class SearchPage extends StatelessWidget {
                 padding: const EdgeInsets.all(10.0),
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: Text("Don't have an account"),
+                  child: const Text("Don't have an account"),
                 ),
               ),
             ),
