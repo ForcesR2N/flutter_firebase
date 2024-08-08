@@ -8,7 +8,7 @@ class MyHome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text('R I Z Z not',style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),),
+        title: const Text('R I Z Z app',style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),),
       ),
       body: Center(
         child: ElevatedButton(
