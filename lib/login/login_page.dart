@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final String email = "rizal";
-  final int pw = 27;
+  final int pw = 17;
 
   @override
   Widget build(BuildContext context) {
