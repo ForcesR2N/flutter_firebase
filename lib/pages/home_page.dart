@@ -7,36 +7,50 @@ class MyHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.deepPurple,
         title: const Text(
           'R I Z Z app',
-          style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 10),
+            Expanded(
+              child: ListView.builder(
+                itemCount: 17,
+                itemBuilder: (context, index) {
+                  return Card(
+                    margin: EdgeInsets.all(1),
+                    child: ListTile(
+                      leading: const CircleAvatar(
+                        backgroundColor: Colors.deepPurpleAccent,
+                        child: Icon(Icons.person, color: Colors.white),
+                      ),
+                      title: Text(
+                        'User $index',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.deepPurple,
+                        ),
+                      ),
+                      subtitle: Text(
+                        'This is a post',
+                        style: TextStyle(color: Colors.grey[600]),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Latest Updates',
-            style: TextStyle(fontSize: 24, color: Colors.white),
-          ),
-          SizedBox(height: 10),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 10, 
-              itemBuilder: (context, index) {
-                return ListTile(
-                  leading: CircleAvatar(child: Icon(Icons.person)),
-                  title: Text('User $index',
-                      style: TextStyle(color: Colors.white)),
-                  subtitle: Text('This is a post bruh',
-                      style: TextStyle(color: Colors.white70)),
-                );
-              },
-            ),
-          ),
-        ],
-      ),
+      backgroundColor: Colors.white,
     );
   }
 }
