@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Navbar(),
+      home: LoginOrRegister(),
       theme: lightMode,
       darkTheme: darkMode,
     );

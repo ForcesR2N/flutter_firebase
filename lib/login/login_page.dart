@@ -47,6 +47,7 @@ class LoginPage extends StatelessWidget {
                 txtHint: "Password",
                 txtObsure: true,
                 controller: passwordController,
+                
               ),
               const SizedBox(height: 10),
               Row(
