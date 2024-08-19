@@ -50,6 +50,7 @@ class _MyTextfieldState extends State<MyTextfield> {
             : null,
       ),
       obscureText: widget.txtObsure ? _obsureText : false,
+      obscuringCharacter: "?",
     );
   }
 }
