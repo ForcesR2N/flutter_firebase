@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase/components/my_button.dart';
+import 'package:flutter_firebase/components/my_snackbar.dart';
 import 'package:flutter_firebase/components/text_field.dart';
 import 'package:flutter_firebase/pages/home_page.dart';
 import 'package:flutter_firebase/components/navbar.dart';
@@ -57,7 +58,7 @@ class LoginPage extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 15,
                         color: Theme.of(context).colorScheme.inversePrimary),
-                  )
+                  ),
                 ],
               ),
               const SizedBox(
@@ -73,9 +74,17 @@ class LoginPage extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => const Navbar()));
                   } else {
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                      content: Text("login failed"),
-                    ));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Login Failed"),
+                        action: SnackBarAction(
+                          label: 'Try Again',
+                          onPressed: () {
+                            print('Retry clicked');
+                          },
+                        ),
+                      ),
+                    );
                   }
                 },
               ),
