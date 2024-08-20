@@ -76,12 +76,10 @@ class LoginPage extends StatelessWidget {
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text("Login Failed"),
+                        content: const Text("Login Failed"),
                         action: SnackBarAction(
                           label: 'Try Again',
-                          onPressed: () {
-                            print('Retry clicked');
-                          },
+                          onPressed: () {},
                         ),
                       ),
                     );
