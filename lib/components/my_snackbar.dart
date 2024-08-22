@@ -15,7 +15,7 @@ class MySnackbar extends StatelessWidget {
     return SnackBar(
       content: Text(
         messageLogin,
-        style: TextStyle(fontSize: 17),
+        style: const TextStyle(fontSize: 17),
       ),
       action: (actionMessage != null)
           ? SnackBarAction(

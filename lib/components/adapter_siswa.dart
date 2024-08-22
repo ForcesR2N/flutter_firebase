@@ -29,7 +29,7 @@ class AdapterSiswa extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
               gradient: LinearGradient(
                 colors: [Colors.blueAccent, Colors.lightBlueAccent],
